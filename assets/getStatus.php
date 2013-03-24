@@ -22,7 +22,7 @@ $cacheminutes = 5; // 5 minutes
 $cachetime = $cacheminutes * 60;
 
 $flag = true;
-$get = trim($_SERVER['argv'][0]);
+$get = trim($_GET["q"]);
 if(!file_exists("cache_".$get.".txt")) {
 	file_put_contents("cache_".$get.".txt", "");
 	$flag = false;

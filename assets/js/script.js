@@ -20,7 +20,7 @@ function LoadingScreen() {
 
 function LoadData() {
 	$.ajax({
-		url: 'assets/getStatus.php?all',
+		url: 'assets/getStatus.php?q=all',
 		dataType: 'json',
 		async: true,
 		success: function(data) {
@@ -51,9 +51,9 @@ function LoadData() {
 	loadSingleData("NetSpeedDown", "NET_DOWN");
 }
 
-function loadSingleData(url, val) {
+function loadSingleData(DaVal, val) {
 	$.ajax({
-		url: 'assets/getStatus.php?' + url,
+		url: 'assets/getStatus.php?q=' + DaVal,
 		dataType: 'json',
 		async: true,
 		success: function(data) {
