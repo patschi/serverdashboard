@@ -4,11 +4,11 @@ This is a simple and awesome dashboard for your own server. The dashboard requir
 
 JSON will be used to transfer data between the dashboard and the PHP script. Optionally you can allow external access from other domains with AJAX to the simple json-API - simply change `$AllowExternalAccess = false;` to `$AllowExternalAccess = true;`.
 
-### Requrements
+### Requirements
 ---
-1. a (own?) linux server.
-2. PHP.
-3. a browser.
+1. a (own?) linux machine (Debian recommended).
+2. PHP 5.3+.
+3. a browser with CSS3 support.
 4. some basic knowledge.
 
 ### Screenshot
