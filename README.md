@@ -18,7 +18,6 @@ JSON will be used to transfer data between the dashboard and the PHP script. Opt
 ---
 ![Screenshot 1](https://raw.github.com/patschi/serverdashboard/master/ServerOverview1.png "Screenshot 1")
 ![Screenshot 2](https://raw.github.com/patschi/serverdashboard/master/ServerOverview2.png "Screenshot 2")
-![Screenshot 3](https://raw.github.com/patschi/serverdashboard/master/ServerOverview3.png "Screenshot 3")
 
 ### Live Demo
 ---

@@ -46,10 +46,10 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 
 	} else if($get == "all") {
 
-		$data["SW_Web"]	       = CheckRunningProcess("nginx");
-		$data["SW_DB"]         = CheckRunningProcess("mysqld");
-		$data["SW_FTP"]        = CheckRunningProcess("proftpd");
-		$data["SW_MAIL"]       = CheckInitdProcess("postfix");
+		$data["SW_Web"]	       = $_SERVER["SERVER_SOFTWARE"]." ".CheckRunningProcess("nginx");
+		$data["SW_DB"]         = "MySQL ".CheckRunningProcess("mysqld");
+		$data["SW_FTP"]        = "ProFTPd ".CheckRunningProcess("proftpd");
+		$data["SW_MAIL"]       = "Postfix ".CheckInitdProcess("postfix");
 
 		$data["HW_OS"]         = getOperatingSystem();
 		$data["HW_KERNEL"]     = getKernel();

@@ -33,10 +33,10 @@ function LoadData() {
 				 }else if(key == "TIMESTAMP") {
 					$("#latestData").html(UnixTS(val));
 				}
-				if(val == "R0") {
-					val = '<font color="red">Not running</font>';
-				 }else if(val == "R1") {
-					val = '<font color="green">Running</font>';
+				if(val.toString().substr(-2) == "R0") {
+					val = val.replace('R0', '<span style="font-size:12px;">- <span style="color:red; font-size:11px;">Not running</span></span>');
+				 }else if(val.toString().substr(-2) == "R1") {
+					val = val.replace('R1', '<span style="font-size:12px;">- <span style="color:green; font-size:11px;">Running</span></span>');
 				}
 				$("#" + key).html(val);
 			});
