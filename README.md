@@ -10,7 +10,7 @@ JSON will be used to transfer data between the dashboard and the PHP script. Opt
 2. PHP 5.3+.
 3. a browser with CSS3 support.
 4. some basic knowledge.
-5. To get Download/Upload speed working add following in the `sudo` configuration: `www-data        ALL=NOPASSWD: /sbin/ifconfig eth0`
+5. To get Download/Upload speed working, you need to add the following line in the `sudo` configuration. The editor can be started by default with `visudo`. Add this line: `www-data        ALL=NOPASSWD: /sbin/ifconfig eth0`
 6. Requires `lsb-release` package
 
 ### Screenshot
