@@ -18,13 +18,13 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 	$memInfo = getMemInfo();
 	$time = time();
 
-	if($_GET["data"] == "NetSpeedUp") {
+	if($get == "NetSpeedUp") {
 		$data["value"]      = getSpeed("tx");
 
-	}else if($_GET["data"] == "NetSpeedDown") {
+	}else if($get == "NetSpeedDown") {
 		$data["value"]      = getSpeed("rx");
 
-	} else if($_GET["data"] == "all") {
+	} else if($get == "all") {
 
 		$data["SW_Web"]	       = CheckRunningProcess("nginx");
 		$data["SW_DB"]         = CheckRunningProcess("mysqld");
@@ -43,7 +43,7 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 		$data["NET_IP"]        = getIP();
 
 	}else{
-		die("ERROR");
+		die("ERROR1");
 	}
 
 	$data["CACHE"]     = $cachetime; 
@@ -114,7 +114,7 @@ function getSpeed($r) {
 	 }else if($r == "tx") {
 		$cmd = "sudo ifconfig eth0 | grep 'TX bytes' | cut -d: -f3 | awk '{ print $1 }'";
 	}else{
-		die("ERROR");
+		die("ERROR2");
 	}
 	$o1 = shell_exec($cmd);
 	sleep(1);

@@ -67,6 +67,12 @@ function UnixTS(uts){
 	var hour = a.getHours();
 	var min = a.getMinutes();
 	var sec = a.getSeconds();
+	if(date.toString().length  == 1) { date  = "0" + date;  }
+	if(month.toString().length == 1) { month = "0" + month; }
+	if(date.toString().length  == 1) { date  = "0" + date;  }
+	if(hour.toString().length  == 1) { hour  = "0" + hour;  }
+	if(min.toString().length   == 1) { min   = "0" + min;   }
+	if(sec.toString().length   == 1) { sec   = "0" + sec;   }
 	var time = date + '. ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
 	return time;
  }
