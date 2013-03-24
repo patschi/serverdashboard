@@ -75,4 +75,4 @@ function UnixTS(uts){
 	if(sec.toString().length   == 1) { sec   = "0" + sec;   }
 	var time = date + '. ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
 	return time;
- }
+}
