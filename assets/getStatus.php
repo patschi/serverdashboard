@@ -144,6 +144,7 @@ function getIP() {
 }
 
 function getSpeed($r) {
+	global $interface;
 	// Calculate the average download and
 	// upload speed within 3 seconds.
 	// Required line in sudo configuration:
