@@ -4,19 +4,18 @@ This is a simple and awesome dashboard for your own server. The dashboard requir
 
 JSON will be used to transfer data between the dashboard and the PHP script. Optionally you can allow external access from other domains with AJAX to the simple json-API - simply change `$AllowExternalAccess = false;` to `$AllowExternalAccess = true;`.
 
-**Requirement:** 
-1. a (own?) server
-2. PHP
-3. a browser
-4. some basic knowledge
-
+### Requrements
+---
+1. a (own?) linux server.
+2. PHP.
+3. a browser.
+4. some basic knowledge.
 
 ### Screenshot
 ---
 ![Screenshot 1](https://raw.github.com/patschi/serverdashboard/master/ServerOverview1.png "Screenshot 1")
 ![Screenshot 2](https://raw.github.com/patschi/serverdashboard/master/ServerOverview2.png "Screenshot 2")
 ![Screenshot 3](https://raw.github.com/patschi/serverdashboard/master/ServerOverview3.png "Screenshot 3")
-
 
 ### Live Demo
 ---
