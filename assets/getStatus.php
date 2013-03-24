@@ -1,7 +1,7 @@
 <?php
 // Set correct header
 header("Content-Type: text/json");
-
+$interface = "eth0";
 // Allow external access for example with AJAX?
 // (From other domains/urls)
 $AllowExternalAccess = false;
@@ -139,9 +139,9 @@ function getSpeed($r) {
 	// Required line in sudo configuration:
 	//   www-data        ALL=NOPASSWD: /sbin/ifconfig eth0
 	if($r == "rx") {
-		$cmd = "sudo ifconfig eth0 | grep 'RX bytes' | cut -d: -f2 | awk '{ print $1 }'";
+		$cmd = "sudo ifconfig ".$interface." | grep 'RX bytes' | cut -d: -f2 | awk '{ print $1 }'";
 	 }else if($r == "tx") {
-		$cmd = "sudo ifconfig eth0 | grep 'TX bytes' | cut -d: -f3 | awk '{ print $1 }'";
+		$cmd = "sudo ifconfig ".$interface." | grep 'TX bytes' | cut -d: -f3 | awk '{ print $1 }'";
 	 }else{
 		die("ERROR2");
 	}
