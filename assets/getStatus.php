@@ -35,7 +35,6 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 
 }else{
 	// Save memInfo output to variable
-	$memInfo = getMemInfo();
 	$time = time();
 
 	if($get == "NetSpeedUp") {
@@ -45,6 +44,8 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 		$data["value"]      = getSpeed("rx");
 
 	} else if($get == "all") {
+
+		$memInfo = getMemInfo();
 
 		$data["SW_Web"]	       = $_SERVER["SERVER_SOFTWARE"]." ".CheckRunningProcess("nginx");
 		$data["SW_DB"]         = "MySQL ".CheckRunningProcess("mysqld");
@@ -57,8 +58,11 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 
 		$data["HW_RAM_USED"]   = getSize($memInfo["MemTotal"] - $memInfo["MemFree"]);
 		$data["HW_RAM_AVAIL"]  = getSize($memInfo["MemTotal"]);
+		$data["HW_RAM_PRNT"]   = round(((100 * ($memInfo["MemTotal"] - $memInfo["MemFree"])) / $memInfo["MemTotal"]), 1);
+
 		$data["HW_SWAP_USED"]  = getSize($memInfo["SwapTotal"] - $memInfo["SwapFree"]);
 		$data["HW_SWAP_AVAIL"] = getSize($memInfo["SwapTotal"]);
+		$data["HW_SWAP_PRNT"]  = round(((100 * ($memInfo["SwapTotal"] - $memInfo["SwapFree"])) / $memInfo["SwapTotal"]), 1);
 
 		$data["NET_IP"]        = getIP();
 
