@@ -7,12 +7,15 @@ JSON will be used to transfer data between the dashboard and the PHP script. Opt
 ### Requirements
 ---
 1. a (own?) linux machine (Debian recommended).
-2. PHP 5.3+.
+2. PHP 5.3+ with shell_exec() enabled.
 3. a browser with CSS3 support.
 4. some basic knowledge.
-5. To get Download/Upload speed working, you need to add the following line in the `sudo` configuration. The editor can be started by default with `visudo`. Add this line: `www-data        ALL=NOPASSWD: /sbin/ifconfig eth0`
-6. Requires `lsb-release` package
-7. If you not use eth0 as interface edit the `$interface` in `./assets/getStatus.php`
+
+### Installation
+---
+1. To get Download/Upload speed working, you need to add the following line in the `sudo` configuration. The editor can be started by default with `visudo`. Add this line: `www-data        ALL=NOPASSWD: /sbin/ifconfig eth0`.
+2. Install `lsb-release` package (`sudo apt-get install lsb-release` on debian systems).
+3. If you not use eth0 as interface edit the `$interface` in `assets/getStatus.php`.
 
 ### Screenshot
 ---
@@ -21,8 +24,7 @@ JSON will be used to transfer data between the dashboard and the PHP script. Opt
 
 ### Live Demo
 ---
-Live demonstration can be viewed on <a href="http://serverdashboard.pkern.at" target="_blank">pkern.at</a>
-
+Live demonstration can be viewed on <a href="http://serverdashboard.pkern.at" target="_blank">serverdashboard.pkern.at</a>
 
 ### Credits
 ---
