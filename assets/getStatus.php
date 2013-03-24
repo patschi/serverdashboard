@@ -78,6 +78,9 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 }
 
 // Functions
+//
+// Normally no need to change!!
+//
 function CheckRunningProcess($prc) {
 	// Check if process is running
 	$o = shell_exec("pidof ".$prc);

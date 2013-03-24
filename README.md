@@ -13,9 +13,11 @@ JSON will be used to transfer data between the dashboard and the PHP script. Opt
 
 ### Installation
 ---
-1. To get Download/Upload speed working, you need to add the following line in the `sudo` configuration. The editor can be started by default with `visudo`. Add this line: `www-data        ALL=NOPASSWD: /sbin/ifconfig eth0`.
+1. Clone this git: `git clone git://github.com/patschi/serverdashboard.git`
+1. Add `www-data        ALL=NOPASSWD: /sbin/ifconfig eth0` to your `sudo` configuration, which can be open by default with the command `visudo.` This is needed that the user `www-data` can execute the ifconfig command to read out the current sent and received bytes for getting the network speed.
 2. Install `lsb-release` package (`sudo apt-get install lsb-release` on debian systems).
 3. If you not use eth0 as interface edit the `$interface` in `assets/getStatus.php`.
+4. Change the code of `assets/getStatus.php` to your needs.
 
 ### Screenshot
 ---
