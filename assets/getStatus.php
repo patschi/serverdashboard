@@ -1,4 +1,12 @@
 <?php
+header("Content-Type: text/json");
+
+// Allow external access for example with AJAX?
+// (From other domains/urls)
+$AllowExternalAccess = false;
+if($AllowExternalAccess) {
+	header("Access-Control-Allow-Origin: *");
+}
 
 $cacheminutes = 5; // 5 minutes
 $cachetime = $cacheminutes * 60;
