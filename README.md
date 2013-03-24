@@ -12,7 +12,7 @@ JSON will be used to transfer data between the dashboard and the PHP script. Opt
 4. some basic knowledge.
 5. To get Download/Upload speed working, you need to add the following line in the `sudo` configuration. The editor can be started by default with `visudo`. Add this line: `www-data        ALL=NOPASSWD: /sbin/ifconfig eth0`
 6. Requires `lsb-release` package
-7. If you not use eth0 as interface edit the '$interface' in './assets/getStatus.php'
+7. If you not use eth0 as interface edit the `$interface` in `./assets/getStatus.php`
 
 ### Screenshot
 ---
