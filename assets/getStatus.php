@@ -1,4 +1,5 @@
 <?php
+// Set correct header
 header("Content-Type: text/json");
 
 // Allow external access for example with AJAX?
@@ -8,21 +9,25 @@ if($AllowExternalAccess) {
 	header("Access-Control-Allow-Origin: *");
 }
 
+// Set cache in minutes
 $cacheminutes = 5; // 5 minutes
+// Calculate cache to seconds
 $cachetime = $cacheminutes * 60;
 
 $flag = true;
-
 $get = trim($_SERVER['argv'][0]);
 if(!file_exists("cache_".$get.".txt")) {
 	file_put_contents("cache_".$get.".txt", "");
 	$flag = false;
 }
 
+// Check if cache needs to be updated
 if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
+	// Output the content of the cache
 	echo file_get_contents("cache_".$get.".txt");
 
 }else{
+	// Save memInfo output to variable
 	$memInfo = getMemInfo();
 	$time = time();
 
@@ -56,13 +61,18 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 
 	$data["CACHE"]     = $cachetime; 
 	$data["TIMESTAMP"] = $time;
+
+	// Encode array to json
 	$data = json_encode($data);
+
+	// Save to cache
 	file_put_contents("cache_".$get.".txt", $data);
 	echo $data;
 }
 
 // Functions
 function CheckRunningProcess($prc) {
+	// Check if process is running
 	$o = shell_exec("pidof ".$prc);
 	if(empty($o)) {
 		return "R0";
@@ -72,6 +82,7 @@ function CheckRunningProcess($prc) {
 }
 
 function CheckInitdProcess($prc) {
+	// Check if process is running
 	$o = shell_exec("/etc/init.d/".$prc." status");
 	if(strpos($o, "running") !== false) {
 		return "R0";
@@ -81,32 +92,38 @@ function CheckInitdProcess($prc) {
 }
 
 function getOperatingSystem() {
+	// Read out current operating system
+	// Requires 'lsb-release' package.
 	$o = shell_exec("lsb_release -d");
 	$o = explode(":", $o);
 	return trim($o[1]);
 }
 
 function getCPU() {
+	// Get current CPU usage
+	// and parse it
 	$o = shell_exec("cat /proc/loadavg");
 	$o = explode(" ", $o);
 	return $o[0]." ".$o[1]." ".$o[2];
 }
 
 function getKernel() {
+	// Read out current kernel
 	$o = shell_exec("uname -r");
 	return $o;
 }
 
 function getMemInfo() {
+	// Load and parse /proc/meminfo to get
+	// the RAM and SWAP usage. All other values
+	// will be saved but not used in this script.
 	$o = shell_exec("cat /proc/meminfo");
 	$o = explode("\n", $o);
 	foreach($o as $i) {
 		if(!empty($i)) {
 			$i = explode(":", $i);
-			$t = trim($i[1]);
-			$t = explode(" ", $t);
-			$t = ($t[0] * 1024);
-			$memInfo[$i[0]] = $t;
+			$t = explode(" ", trim($i[1]));
+			$memInfo[$i[0]] = ($t[0] * 1024);
 		}
 	}
 	return $memInfo;
@@ -117,13 +134,19 @@ function getIP() {
 }
 
 function getSpeed($r) {
+	// Calculate the average download and
+	// upload speed within 3 seconds.
+	// Required line in sudo configuration:
+	//   www-data        ALL=NOPASSWD: /sbin/ifconfig eth0
 	if($r == "rx") {
 		$cmd = "sudo ifconfig eth0 | grep 'RX bytes' | cut -d: -f2 | awk '{ print $1 }'";
 	 }else if($r == "tx") {
 		$cmd = "sudo ifconfig eth0 | grep 'TX bytes' | cut -d: -f3 | awk '{ print $1 }'";
-	}else{
+	 }else{
 		die("ERROR2");
 	}
+	// Executing and get total send/received
+	// bytes the next three seconds
 	$o1 = shell_exec($cmd);
 	sleep(1);
 	$o2 = shell_exec($cmd);
@@ -131,14 +154,17 @@ function getSpeed($r) {
 	$o3 = shell_exec($cmd);
 	sleep(1);
 	$o4 = shell_exec($cmd);
+	// Calculate differences
 	$o1 = $o2 - $o1;
 	$o2 = $o3 - $o2;
 	$o3 = $o4 - $o3;
+	// Calc average
 	$o = (($o1 + $o2 + $o3) / 3);
 	return getSize($o)."/s";
 }
 
 function getSize($size) {
+	// Calculate sizes for better display
 	$round = 2;
 	if ($size<=1024) $size = $size." Byte";
 	else if ($size<=1024000) $size = round($size/1024,$round)." KB";
