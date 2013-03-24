@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>Server Dashboard</title>
+        <meta name="robots" content="all">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" type="text/css" />
+        <link rel="stylesheet" href="assets/style.css" type="text/css" />
+        <script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/script.js"></script>
+	</head>
+    
+    <body>
+    	<div class="container">
+        	<div id="greyline"></div>
+            <div id="close" onClick="alert('Now just imagine that this window has been closed.');"></div>
+            <ul>
+            	<li>
+					<div class="head">Server Statistics</div>
+					<span id="latestData" style="font-size:11px;">Latest data</span>
+					<div class="refresh" onClick="InitLoad();"></div>
+				</li>
+            </ul>
+            <div class="clear"></div>
+        	<div class="content">
+            	<div id="left">
+                	<h1>Software</h1>
+					<div class="head">Webserver</div>
+					<div class="text"><span id="SW_Web"></span></div>
+					<div class="head">Database</div>
+					<div class="text"><span id="SW_DB"></span></div>
+					<div class="head">Mailserver</div>
+					<div class="text"><span id="SW_MAIL"></span></div>
+					<div class="head">FTP-Server</div>
+					<div class="text"><span id="SW_FTP"></span></div>
+	            </div>
+                <div id="middle">
+                	<h1>Hardware</h1>
+					<div class="head">Operating System</div>
+					<div class="text"><span id="HW_OS"></span></div>
+					<div class="head">Kernel</div>
+					<div class="text"><span id="HW_KERNEL"></span></div>
+					<div class="head">CPU / Load average</div>
+					<div class="text"><span id="HW_CPU"></span></div>
+					<div class="head">RAM / SWAP</div>
+					<div class="text">
+						<span id="HW_RAM_SWAP"></span>
+						<span id="HW_RAM">
+							<span id="HW_RAM_USED"></span>
+							<span id="HW_RAM_AVAIL"></span>
+						</span>
+						<br />
+						<span id="HW_SWAP">
+							<span id="HW_SWAP_USED"></span>
+							<span id="HW_SWAP_AVAIL"></span>
+						</span>
+					</div>
+	            </div>
+                <div id="right">
+                	<h1>Network</h1>
+					<div class="head">IP Address</div>
+					<div class="text"><span id="NET_IP"></span></div>
+					<div class="head">Download Speed</div>
+					<div class="text"><span id="NET_DOWN"></span></div>
+					<div class="head">Upload Speed</div>
+					<div class="text"><span id="NET_UP"></span></div>
+	            </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+		<div class="footer">
+			&copy; 2013 Design by <a href="http://code-project.de" target="_blank">Code-Project.de</a>
+			<br />
+			&copy; 2013 Code by <a href="http://pkern.at" target="_blank">pkern.at</a>
+		</div>
+    </body>
+</html>

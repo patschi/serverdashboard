@@ -1,0 +1,20 @@
+* { margin:0px; padding:0px; }
+body { background:url(img/bg.jpg) bottom center fixed; font-family:'Droid Sans',sans-serif; }
+.clear { clear:both; }
+
+.container { width:800px; height:420px; background:#f6f5f1; position:fixed; top:50%; margin-top:-200px; left:50%; margin-left:-400px; box-shadow:0px 0px 24px -3px #000; }
+.container #close { background:url(img/close.png) no-repeat 15px 12px; height:41px; border-left:1px solid rgba(0,0,0,0.1); width:31px; position:absolute; right:17px; cursor:pointer; }
+.container #greyline { width:800px; background:#e3e2de; height:4px; }
+.container .head { text-transform:uppercase; opacity:0.22; font-weight:700; font-size:11px; padding-bottom:3px; }
+.container .text { font-size:17px; padding-bottom:22px; }
+.container .loading { opacity:0.50; font-size:14px; }
+.container li { margin-left:25px; list-style:none; float:left; border-left:1px solid #e6e5e3; border-right:1px solid #e6e5e3; height:40px; background:#fff; font-size:13px; padding-left:15px; margin-top:-4px; width:200px; padding-top:5px; position:relative; z-index:5; top:1px; }
+.container li .refresh { background:url(img/refresh.png) no-repeat; height:18px; width:18px; position:absolute; left:180px; top:10px; cursor:pointer; }
+.container .content { height:380px; background:#fff; width:800px; font-family:'Droid Sans',sans-serif; font-size:12px; border-top:1px solid #e6e5e3; }
+.container .content #left, .container .content #middle, .container .content #right { padding:30px; padding-left:40px; float:left; width:191.66px; border-right:1px dotted rgba(0,0,0,0.3); margin-top:10px; min-height:280px; }
+.container .content #right { border:0px; }
+.container .content h1 { color:#43c5d2; font-weight:normal; padding-bottom: 10px; }
+
+.footer { position:fixed; bottom:10px; right:10px; font-size:11px; }
+.footer a { color:#000; text-decoration:none; }
+.footer a:hover { text-decoration:underline; }
