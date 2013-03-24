@@ -1,7 +1,10 @@
 <?php
 // Set correct header
 header("Content-Type: text/json");
+
+//If you don't use eth0, edit it :)
 $interface = "eth0";
+
 // Allow external access for example with AJAX?
 // (From other domains/urls)
 $AllowExternalAccess = false;
