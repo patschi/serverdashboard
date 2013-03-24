@@ -1,4 +1,8 @@
 <?php
+// Only report errors and no NOTICES, DEPRECATED
+// and STRICT warnings.
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+
 // Set correct header
 header("Content-Type: text/json");
 
