@@ -6,20 +6,17 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
 // Set correct header
 header("Content-Type: text/json");
 
-//If you don't use eth0, edit it :)
-$interface = "eth0";
-
-// Allow external access for example with AJAX?
-// (From other domains/urls)
-$AllowExternalAccess = false;
-if($AllowExternalAccess) {
+require("config.php");
+if($config["AllowExternalAccess"]) {
 	header("Access-Control-Allow-Origin: *");
 }
 
-// Set cache in minutes
-$cacheminutes = 5; // 5 minutes
 // Calculate cache to seconds
-$cachetime = $cacheminutes * 60;
+if($config["cacheminutes"] < 1) {
+	$Cache = false;
+}else{
+	$cachetime = $config["cacheminutes"] * 60;
+}
 
 $flag = true;
 $get = trim($_GET["q"]);
@@ -48,10 +45,14 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 
 		$memInfo = getMemInfo();
 
-		$data["SW_Web"]	       = $_SERVER["SERVER_SOFTWARE"]." ".CheckRunningProcess("nginx");
-		$data["SW_DB"]         = "MySQL ".CheckRunningProcess("mysqld");
-		$data["SW_MAIL"]       = "Postfix ".CheckInitdProcess("postfix");
-		$data["SW_FTP"]        = "ProFTPd ".CheckRunningProcess("proftpd");
+		$i = 0;
+		foreach($config["Software"] as $key => $value) {
+			$name = array_keys($value);
+			$name = $name[0];
+			$process = $value[$name];
+			$data[$key] = $name." ".CheckRunningProcess($process);
+			$i++;
+		}
 
 		$data["HW_OS"]         = getOperatingSystem();
 		$data["HW_KERNEL"]     = getKernel();
@@ -84,13 +85,17 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 
 // Functions
 //
-// Normally no need to change!!
+//  Normally no need to change!!
 //
 function CheckRunningProcess($prc) {
 	// Check if process is running
 	$o = shell_exec("pidof ".$prc);
 	if(empty($o)) {
-		return "R0";
+		if(CheckInitdProcess($prc) == false) {
+			return "R0";
+		}else{
+			return "R1";
+		}
 	 }else{
 		return "R1";
 	}
@@ -100,9 +105,9 @@ function CheckInitdProcess($prc) {
 	// Check if process is running
 	$o = shell_exec("/etc/init.d/".$prc." status");
 	if(strpos($o, "running") !== false) {
-		return "R0";
+		return false;
 	 }else{
-		return "R1";
+		return true;
 	}
 }
 
@@ -149,15 +154,15 @@ function getIP() {
 }
 
 function getSpeed($r) {
-	global $interface;
+	global $config;
 	// Calculate the average download and
 	// upload speed within 3 seconds.
 	// Required line in sudo configuration:
 	//   www-data        ALL=NOPASSWD: /sbin/ifconfig eth0
 	if($r == "rx") {
-		$cmd = "sudo ifconfig ".$interface." | grep 'RX bytes' | cut -d: -f2 | awk '{ print $1 }'";
+		$cmd = "sudo ifconfig ".$config["interface"]." | grep 'RX bytes' | cut -d: -f2 | awk '{ print $1 }'";
 	 }else if($r == "tx") {
-		$cmd = "sudo ifconfig ".$interface." | grep 'TX bytes' | cut -d: -f3 | awk '{ print $1 }'";
+		$cmd = "sudo ifconfig ".$config["interface"]." | grep 'TX bytes' | cut -d: -f3 | awk '{ print $1 }'";
 	 }else{
 		die("ERROR2");
 	}

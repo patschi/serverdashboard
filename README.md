@@ -1,8 +1,12 @@
 # Server dashboard
 
-This is a simple and awesome dashboard for your own server. The dashboard require the functionality of shell_exec - they are mostly disabled on shared hosting systems. There is also a simple cache functionality included to prevent high loads on the system; the cache time can be setted in the top of the `assets/getStatus.php` file.
+This is a simple and awesome dashboard for your own server. The dashboard require the functionality of shell_exec - they are mostly disabled on shared hosting systems. There is also a simple cache functionality included to prevent high loads on the system, configurable in the simple configuration.
 
-JSON will be used to transfer data between the dashboard and the PHP script. Optionally you can allow external access from other domains with AJAX to the simple json-API - simply change `$AllowExternalAccess = false;` to `$AllowExternalAccess = true;`.
+JSON will be used to transfer data between the dashboard and the PHP script. Optionally you can allow external access from other domains with AJAX to the simple json-API - simply change the config variable `AllowExternalAccess` to `true`.
+
+For easier use there is a simple configuration file, which is located at `assets/config.php` and edit it to your needs, before you're going to use this dashboard. Please give me feedback, wishes and report bugs - if you find one :)
+
+Thanks for using!
 
 ### Requirements
 ---
@@ -16,8 +20,8 @@ JSON will be used to transfer data between the dashboard and the PHP script. Opt
 1. Clone this git: `git clone git://github.com/patschi/serverdashboard.git`
 1. Add `www-data        ALL=NOPASSWD: /sbin/ifconfig eth0` to your `sudo` configuration, which can be open by default with the command `visudo.` This is needed that the user `www-data` can execute the ifconfig command to read out the current sent and received bytes for getting the network speed.
 2. Install `lsb-release` package (`sudo apt-get install lsb-release` on debian systems).
-3. If you not use eth0 as interface edit the `$interface` in `assets/getStatus.php`.
-4. Change the code of `assets/getStatus.php` to your needs.
+3. If don't use eth0 as your default network interface, you need to set the correct one in the configuration file, which is located at `assets/config.php`.
+4. Change the configuration of `assets/config.php` to your needs.
 
 ### Screenshot
 ---
