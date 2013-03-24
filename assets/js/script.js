@@ -49,6 +49,8 @@ function LoadData() {
 
 	loadSingleData("NetSpeedUp",   "NET_UP");
 	loadSingleData("NetSpeedDown", "NET_DOWN");
+
+	window.setTimeout(showItems, 10);
 }
 
 function loadSingleData(DaVal, val) {
@@ -59,6 +61,14 @@ function loadSingleData(DaVal, val) {
 		success: function(data) {
 			$("#" + val).html(data.value);
 		}
+	});
+}
+
+function showItems() {
+	$('.text').css('opacity', '0').each(function(i) {
+		$(this).delay(i * 75).animate({
+			opacity: 1
+		}, 1000);
 	});
 }
 

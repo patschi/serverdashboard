@@ -12,11 +12,11 @@
     <body>
     	<div class="container">
         	<div id="greyline"></div>
-            <div id="close" onClick="alert('Now just imagine that this window has been closed.');"></div>
+            <div id="close" onClick="$('.container').hide();$('.footer').hide();alert('Now you closed my awesome server dashboard :(');"></div>
             <ul>
             	<li>
 					<div class="head">Server Statistics</div>
-					<span id="latestData" style="font-size:11px;">Latest data</span>
+					<span id="latestData" class="smallText" title="Date of the cached overview stats">Latest data</span>
 					<div class="refresh" onClick="InitLoad();"></div>
 				</li>
             </ul>
