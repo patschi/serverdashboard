@@ -9,6 +9,7 @@ Screenshot
 =============
 ![Screenshot 1](https://raw.github.com/patschi/serverdashboard/master/ServerOverview1.png "Screenshot 1")
 ![Screenshot 2](https://raw.github.com/patschi/serverdashboard/master/ServerOverview2.png "Screenshot 2")
+![Screenshot 3](https://raw.github.com/patschi/serverdashboard/master/ServerOverview3.png "Screenshot 3")
 
 
 Live Demo
@@ -18,5 +19,5 @@ Live demonstration can be viewed on <a href="http://serverdashboard.pkern.at" ta
 
 Credits
 =============
-Awesome design by <a href="http://code-project.de" target="_blank">code-project.de</a>
+Awesome design by <a href="http://code-project.de" target="_blank">code-project.de</a><br />
 Code and idea by <a href="http://pkern.at" target="_blank">pkern.at</a>

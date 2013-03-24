@@ -4,7 +4,8 @@ $cacheminutes = 5; // 5 minutes
 $cachetime = $cacheminutes * 60;
 
 $flag = true;
-$get = trim($_GET["data"]);
+
+$get = trim($_SERVER['argv'][0]);
 if(!file_exists("cache_".$get.".txt")) {
 	file_put_contents("cache_".$get.".txt", "");
 	$flag = false;

@@ -20,7 +20,7 @@ function LoadingScreen() {
 
 function LoadData() {
 	$.ajax({
-		url: 'assets/getStatus.php?data=all',
+		url: 'assets/getStatus.php?all',
 		dataType: 'json',
 		async: true,
 		success: function(data) {
@@ -49,7 +49,7 @@ function LoadData() {
 
 function loadSingleData(url, val) {
 	$.ajax({
-		url: 'assets/getStatus.php?data=' + url,
+		url: 'assets/getStatus.php?' + url,
 		dataType: 'json',
 		async: true,
 		success: function(data) {
