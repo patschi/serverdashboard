@@ -8,11 +8,15 @@ For easier use there is a simple configuration file, which is located at `assets
 
 Thanks for using!
 
+### License
+---
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Server Dashboard</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://pkern.at" property="cc:attributionName" rel="cc:attributionURL">Patrik Kernstock alias Patschi</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/patschi/serverdashboard" rel="cc:morePermissions">https://github.com/patschi/serverdashboard</a>.
+
 ### Requirements
 ---
 1. a (own?) linux machine (Debian recommended).
 2. PHP 5.3+ with shell_exec() enabled.
-3. a browser with CSS3 support.
+3. a browser with JavaScript and CSS3 support.
 4. some basic knowledge.
 
 ### Installation
@@ -23,7 +27,7 @@ Thanks for using!
 3. If don't use eth0 as your default network interface, you need to set the correct one in the configuration file, which is located at `assets/config.php`.
 4. Change the configuration of `assets/config.php` to your needs.
 
-### Screenshot
+### Screenshots
 ---
 ![Screenshot 1](https://raw.github.com/patschi/serverdashboard/master/ServerOverview1.png "Screenshot 1")
 ![Screenshot 2](https://raw.github.com/patschi/serverdashboard/master/ServerOverview2.png "Screenshot 2")
