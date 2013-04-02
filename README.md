@@ -8,10 +8,6 @@ For easier use there is a simple configuration file, which is located at `assets
 
 Thanks for using!
 
-### License
----
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Server Dashboard</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://pkern.at" property="cc:attributionName" rel="cc:attributionURL">Patrik Kernstock (Patschi)</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/patschi/serverdashboard" rel="cc:morePermissions">https://github.com/patschi/serverdashboard</a>.
-
 ### Requirements
 ---
 1. a (own?) linux machine (Debian recommended).
@@ -35,6 +31,10 @@ Thanks for using!
 ### Live Demo
 ---
 Live demonstration can be viewed on <a href="http://serverdashboard.pkern.at" target="_blank">serverdashboard.pkern.at</a>
+
+### License
+---
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Server Dashboard</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://pkern.at" property="cc:attributionName" rel="cc:attributionURL">Patrik Kernstock (Patschi)</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/patschi/serverdashboard" rel="cc:morePermissions">https://github.com/patschi/serverdashboard</a>.
 
 ### Credits
 ---
