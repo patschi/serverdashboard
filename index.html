@@ -1,0 +1,103 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Serverdashboard</title>
+  <meta name="description" content="A dashboard with overview of your server.">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Serverdashboard</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">A dashboard with overview of your server.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/patschi/serverdashboard/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/patschi/serverdashboard/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/patschi/serverdashboard" class="code">View Serverdashboard on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>Server dashboard</h1>
+
+<p>This is a simple and awesome dashboard for your own server. The dashboard require the functionality of shell_exec - they are mostly disabled on shared hosting systems. There is also a simple cache functionality included to prevent high loads on the system, configurable in the simple configuration.</p>
+
+<p>JSON will be used to transfer data between the dashboard and the PHP script. Optionally you can allow external access from other domains with AJAX to the simple json-API - simply change the config variable <code>AllowExternalAccess</code> to <code>true</code>.</p>
+
+<p>For easier use there is a simple configuration file, which is located at <code>assets/config.php</code> and edit it to your needs, before you're going to use this dashboard. Please give me feedback, wishes and report bugs - if you find one :)</p>
+
+<p>Thanks for using!</p>
+
+<h3>Requirements</h3>
+
+<hr><ol>
+<li>a (own?) linux machine (Debian recommended).</li>
+<li>PHP 5.3+ with shell_exec() enabled.</li>
+<li>a browser with JavaScript and CSS3 support.</li>
+<li>some basic knowledge.</li>
+</ol><h3>Installation</h3>
+
+<hr><ol>
+<li>Clone this git: <code>git clone git://github.com/patschi/serverdashboard.git</code>
+</li>
+<li>Add <code>www-data        ALL=NOPASSWD: /sbin/ifconfig eth0</code> to your <code>sudo</code> configuration, which can be open by default with the command <code>visudo.</code> This is needed that the user <code>www-data</code> can execute the ifconfig command to read out the current sent and received bytes for getting the network speed.</li>
+<li>Install <code>lsb-release</code> package (<code>sudo apt-get install lsb-release</code> on debian systems).</li>
+<li>If don't use eth0 as your default network interface, you need to set the correct one in the configuration file, which is located at <code>assets/config.php</code>.</li>
+<li>Change the configuration of <code>assets/config.php</code> to your needs.</li>
+</ol><h3>Screenshots</h3>
+
+<hr><p><img src="https://raw.github.com/patschi/serverdashboard/master/ServerOverview1.png" alt="Screenshot 1" title="Screenshot 1"><img src="https://raw.github.com/patschi/serverdashboard/master/ServerOverview2.png" alt="Screenshot 2" title="Screenshot 2"></p>
+
+<h3>Live Demo</h3>
+
+<hr><p>Live demonstration can be viewed on <a href="http://serverdashboard.pkern.at" target="_blank">serverdashboard.pkern.at</a></p>
+
+<h3>License</h3>
+
+<hr><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"></a><br>Server Dashboard by <a href="http://pkern.at" rel="cc:attributionURL">Patrik Kernstock (Patschi)</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br>Permissions beyond the scope of this license may be available at <a href="https://github.com/patschi/serverdashboard" rel="cc:morePermissions"></a><a href="https://github.com/patschi/serverdashboard">https://github.com/patschi/serverdashboard</a>.</p>
+
+<h3>Credits</h3>
+
+<hr><p>Awesome design by <a href="http://code-project.de" target="_blank">code-project.de</a><br>
+Code and idea by <a href="http://pkern.at" target="_blank">pkern.at</a></p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/patschi" class="avatar"><img src="https://secure.gravatar.com/avatar/917438e84f50f338138b41974f61db28?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/patschi">patschi</a> maintains <a href="https://github.com/patschi/serverdashboard">Serverdashboard</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/patschi/serverdashboard/tarball/master" class="tar">tar</a><a href="https://github.com/patschi/serverdashboard/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
