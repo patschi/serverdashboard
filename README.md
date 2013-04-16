@@ -28,6 +28,10 @@ Thanks for using!
 ![Screenshot 1](https://raw.github.com/patschi/serverdashboard/master/ServerOverview1.png "Screenshot 1")
 ![Screenshot 2](https://raw.github.com/patschi/serverdashboard/master/ServerOverview2.png "Screenshot 2")
 
+### Project page by github
+---
+The official project page is powered by github at: <a href="http://patschi.github.io/serverdashboard/" target="_blank">patschi.github.io/serverdashboard/</a>
+
 ### Live Demo
 ---
 Live demonstration can be viewed on <a href="http://serverdashboard.pkern.at" target="_blank">serverdashboard.pkern.at</a>
