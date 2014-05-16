@@ -41,6 +41,9 @@ if((filemtime("cache_".$get.".txt") + $cachetime) > time() && $flag) {
 	}else if($get == "NetSpeedDown") {
 		$data["value"]      = getSpeed("rx");
 
+	}else if($get == "NetExtIp") {
+		$data["value"] = getExternalIP();
+
 	} else if($get == "all") {
 
 		$memInfo = getMemInfo();
@@ -151,6 +154,13 @@ function getMemInfo() {
 
 function getIP() {
 	return $_SERVER["SERVER_ADDR"];
+}
+
+// Requires shell_exec
+function getExternalIP() {
+	$externalContent = file_get_contents('http://checkip.dyndns.com/');
+	preg_match('/Current IP Address: ([\[\]:.[0-9a-fA-F]+)</', $externalContent, $m);
+	return $m[1];
 }
 
 function getSpeed($r) {

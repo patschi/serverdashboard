@@ -8,7 +8,7 @@ function InitLoad() {
 }
 
 function LoadingScreen() {
-	var fields = new Array("latestData", "SW_Web", "SW_DB", "SW_MAIL", "SW_FTP", "HW_OS", "HW_KERNEL", "HW_CPU", "HW_RAM_SWAP", "NET_IP", "NET_DOWN", "NET_UP");
+	var fields = new Array("latestData", "SW_Web", "SW_DB", "SW_MAIL", "SW_FTP", "HW_OS", "HW_KERNEL", "HW_CPU", "HW_RAM_SWAP", "NET_IP", "NET_EXT_IP", "NET_DOWN", "NET_UP");
 	var empty = new Array("HW_RAM_USED", "HW_RAM_AVAIL", "HW_RAM_PRNT", "HW_SWAP_USED", "HW_SWAP_AVAIL", "HW_SWAP_PRNT");
 	$.each(empty, function(index, value) {
 		$("#" + value).html('');
@@ -48,6 +48,7 @@ function LoadData() {
 	});
 
 	loadSingleData("NetSpeedUp",   "NET_UP");
+	loadSingleData("NetExtIp",   "NET_EXT_IP");
 	loadSingleData("NetSpeedDown", "NET_DOWN");
 
 	window.setTimeout(showItems, 10);
