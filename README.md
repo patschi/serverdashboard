@@ -36,11 +36,6 @@ The official project page is powered by github at: <a href="http://patschi.githu
 ---
 Live demonstration can be viewed on <a href="http://serverdashboard.pkern.at" target="_blank">serverdashboard.pkern.at</a>
 
-### License
----
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Server Dashboard</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://pkern.at" property="cc:attributionName" rel="cc:attributionURL">Patrik Kernstock (Patschi)</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/patschi/serverdashboard" rel="cc:morePermissions">https://github.com/patschi/serverdashboard</a>.
-
 ### Credits
 ---
-Awesome design by <a href="http://code-project.de" target="_blank">code-project.de</a><br />
 Code and idea by <a href="http://pkern.at" target="_blank">pkern.at</a>
